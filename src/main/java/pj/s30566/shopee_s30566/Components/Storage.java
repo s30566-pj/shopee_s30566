@@ -17,6 +17,8 @@ public class Storage {
         products.put("Rodzynki", new BigDecimal("2.50"));
         products.put("Paluszki", new BigDecimal("5.50"));
         products.put("Proszek do prania", new BigDecimal("5.50"));
+        products.put("milk", new BigDecimal(7));
+        products.put("beer", new BigDecimal(3));
     }
 
     public void addItem(String itemName, double itemPrice){
