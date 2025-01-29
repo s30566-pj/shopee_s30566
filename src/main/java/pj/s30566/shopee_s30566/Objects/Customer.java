@@ -39,6 +39,10 @@ public class Customer {
         this.balance = balance;
     }
 
+    public void substractBalance(double balance){
+        this.balance -= balance;
+    }
+
 
 
 
