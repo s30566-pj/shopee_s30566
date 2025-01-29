@@ -50,5 +50,9 @@ public class Cart {
         this.items = items;
     }
 
+    public void addItemsToCart(String item){
+        this.items.add(item);
+    }
+
 
 }
