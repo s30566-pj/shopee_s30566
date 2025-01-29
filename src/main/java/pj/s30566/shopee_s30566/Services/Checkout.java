@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 import pj.s30566.shopee_s30566.Components.Storage;
 import pj.s30566.shopee_s30566.Objects.Cart;
 
-import java.math.BigDecimal;
-import java.util.Map;
+import java.util.Iterator;
 
 @Service
 public class Checkout {
@@ -19,11 +18,11 @@ public class Checkout {
     public boolean finalizePurchase(Cart cart){
         double total = 0;
 
-        for (Map.Entry<String, Integer> entry : cart.getItems().entrySet()){
-            String item = entry.getKey();
-            int quantity = entry.getValue();
+        Iterator<String> iterator = cart.getItems().iterator();
+        while (iterator.hasNext()){
+            String item = iterator.next() ;
             if (storage.hasProduct(item)){
-                total = storage.getPrice(item)*quantity;
+                total += storage.getPrice(item);
             }
         }
 

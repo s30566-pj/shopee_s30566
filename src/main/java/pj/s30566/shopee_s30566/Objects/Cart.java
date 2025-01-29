@@ -1,20 +1,26 @@
 package pj.s30566.shopee_s30566.Objects;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cart {
 
     private int id;
     private Customer customer;
-    private Map<String, Integer> items;
+    private List<String> items;
 
-    public Cart(int id, Customer customer, Map<String, Integer> items) {
+    public Cart(int id, Customer customer, List<String> items) {
         this.id = id;
         this.customer = customer;
         this.items = items;
     }
+    public Cart(int id, Customer customer) {
+        this.id = id;
+        this.customer = customer;
+        this.items = new ArrayList<String>();
+    }
 
-    public Cart(Customer customer, Map<String, Integer> items) {
+    public Cart(Customer customer, List<String> items) {
         this.customer = customer;
         this.items = items;
     }
@@ -36,11 +42,11 @@ public class Cart {
         this.customer = customer;
     }
 
-    public Map<String, Integer> getItems() {
+    public List<String> getItems() {
         return items;
     }
 
-    public void setItems(Map<String, Integer> items) {
+    public void setItems(List<String> items) {
         this.items = items;
     }
 
